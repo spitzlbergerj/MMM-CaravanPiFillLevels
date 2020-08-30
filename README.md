@@ -1,6 +1,6 @@
-# MMM-CaravanPiGasWeight - a MagicMirror<sup>2</sup> Module
+# MMM-CaravanPiFillLevels - a MagicMirror<sup>2</sup> Module
 
-This [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror/) module is used in the [CaravanPi](https://github.com/spitzlbergerj/CaravanPi) project to display data of a HX711 weight sensor. CaravanPi is a project based on a Raspberry Pi for a smart caravan.
+This [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror/) module is used in the [CaravanPi](https://github.com/spitzlbergerj/CaravanPi) project to display filling levels from e.g. a fresh water tank or/and a waste-holding tank. CaravanPi is a project based on a Raspberry Pi for a smart caravan.
 
 In the CaravanPi project Magic Mirror is used as a display module. The screen is usually not mounted behind a mirror, but can also be used as a TV in the caravan. For the Caravan Pi project there are further modules for Magic Mirror:
 
@@ -12,7 +12,7 @@ In the CaravanPi project Magic Mirror is used as a display module. The screen is
 ## Screendumps
 modus: Boxlines
 
-<img src="https://raw.githubusercontent.com/spitzlbergerj/MMM-CaravanPiGasWeight/master/img/MMM-CaravanPiGasWeight-Screendump-Boxlines.jpg">
+<img src="https://raw.githubusercontent.com/spitzlbergerj/MMM-CaravanPiFillLevels/master/img/MMM-CaravanPiFillLevels-Screendump-Boxlines.jpg">
 
 ## Installation
 In your terminal, go to your MagicMirror's Module folder:
@@ -22,12 +22,12 @@ cd ~/MagicMirror/modules
 
 Clone this repository:
 ````
-git clone https://github.com/spitzlbergerj/MMM-CaravanPiGasWeight
+git clone https://github.com/spitzlbergerj/MMM-CaravanPiFillLevels
 ````
 
 install the node dependencies:
 ````
-cd MMM-CaravanPiGasWeight/ && npm install
+cd MMM-CaravanPiFillLevels/ && npm install
 ````
 
 install a nesessary npm modul:
@@ -35,14 +35,21 @@ install a nesessary npm modul:
 npm install async
 ```
 
+
+
+********************** noch zu ändern *****************************
+
+
+
+
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
 {
-	module: 'MMM-CaravanPiGasWeight',
-	header: 'Füllstand Gasflasche',
+	module: 'MMM-CaravanPiFillLevels',
+	header: 'Frischwasser',
 	position: 'top_left', // This can be any of the regions.
 	config: {
         	valueDir: "/home/pi/CaravanPi/values",
