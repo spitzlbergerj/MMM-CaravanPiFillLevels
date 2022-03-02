@@ -12,7 +12,7 @@ In the CaravanPi project Magic Mirror is used as a display module. The screen is
 ## Screendumps
 modus: Boxlines
 
-<img src="https://raw.githubusercontent.com/spitzlbergerj/MMM-CaravanPiFillLevels/master/img/MMM-CaravanPiFillLevels-Screendump-Boxlines.jpg">
+<img src="https://raw.githubusercontent.com/spitzlbergerj/MMM-CaravanPiFillLevels/master/img/MMM-CaravanPiFillLevels-Screendump.png">
 
 ## Installation
 In your terminal, go to your MagicMirror's Module folder:
@@ -35,40 +35,32 @@ install a nesessary npm modul:
 npm install async
 ```
 
-
-
-********************** noch zu ändern *****************************
-
-
-
-
 ## Using the module
 
 To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
-{
-	module: 'MMM-CaravanPiFillLevels',
-	header: 'Frischwasser',
-	position: 'top_left', // This can be any of the regions.
-	config: {
-        	valueDir: "/home/pi/CaravanPi/values",
-        	updateInterval: 100000, // milliseconds
-        	weightUnit: " Gramm",
-        	weightPrecision: 2,
-            levelUnit: " %",
-        	levelPrecision: 2,
-        	showDate: true,
-        	sensors: [
-            	{
-                	name: "Alu 6 kg",
-                	file: "gasScale",
-            	},
-        	],
-        	localeStr: 'de-DE',
-        	style: "lines",
-    	}
-},
+		{
+			module: "MMM-CaravanPiFillLevels",
+			position: "top_right",
+			header: 'Füllstände Tanks',
+			config: {
+				updateInterval: 500,
+				style: "boxlines",
+				tanks: [
+					{
+						name: "Frischwassertank",
+						file: "tank1",
+						nr: 1,
+					},
+					{
+						name: "Fäkalientank",
+						file: "tank2",
+						nr: 2,
+					},
+				],
+			}
+		},
 
 ]
 ````
@@ -95,22 +87,7 @@ The following properties can be configured:
 			<td><b>Optional</b></code> - The update interval in milliseconds.<br/>
 				If not set, the default is: <code>300000</code> (5 minutes)</td>
 		</tr>
-		<tr>
-			<td><code>weightUnit</code></td>
-			<td><b>Optional</b></code> - Unit in which the weight are indicated. Default is <code>Gramm</code></td>
-		</tr>
-        <tr>
-			<td><code>weightPrecision</code></td>
-			<td><b>Optional</b></code> - Decimal places for weight values. Default is <code>2</code></td>
-		</tr>
-		<tr>
-			<td><code>levelUnit</code></td>
-			<td><b>Optional</b></code> - Unit in which the filling level are indicated. Default is <code>%</code></td>
-		</tr>
-        <tr>
-			<td><code>levelPrecision</code></td>
-			<td><b>Optional</b></code> - Decimal places for filling level values. Default is <code>2</code></td>
-		</tr>
+
         <tr>
 			<td><code>showDate</code></td>
 			<td><b>Optional</b></code> - Decides whether the date/time at which the values were determined is displayed. Possible values: <code>true</code> or <code>false</code> Default is <code>true</code></td>
@@ -124,8 +101,8 @@ The following properties can be configured:
 			<td><b>Optional</b></code> - Decides in which style the values are displayed. Possible values: <code>lines</code>, <code>boxes</code> or <code>boxlines</code>Default is <code>'lines'</code></td>
 		</tr>
 		<tr>
-			<td><code>sensors</code></td>
-			<td><b>Required</b> - Add all your sensors that should appear in the MagicMirror. Each sensor must include the following properties:
+			<td><code>tanks</code></td>
+			<td><b>Required</b> - Add all your tanks that should appear in the MagicMirror. Each tank must include the following properties:
 				<table width="100%">
 					<thead>
 						<tr>
@@ -141,6 +118,10 @@ The following properties can be configured:
 						<tr>
 							<td><code>file</code></td>
 							<td>File name from which the values are to be read</td>
+						</tr>
+						<tr>
+							<td><code>nr</code></td>
+							<td>number of the tank</td>
 						</tr>
 						</tbody>
 				</table>
