@@ -5,8 +5,11 @@ This [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror/) module 
 In the CaravanPi project Magic Mirror is used as a display module. The screen is usually not mounted behind a mirror, but can also be used as a TV in the caravan. For the Caravan Pi project there are further modules for Magic Mirror:
 
 [MMM-CaravanPiPosition - Module for displaying level information](https://github.com/spitzlbergerj/MMM-CaravanPiPosition) 
+
 [MMM-CaravanPiGasWeight - Module for indicating the filling of a gas bottle via a scale](https://github.com/spitzlbergerj/MMM-CaravanPiGasWeight) 
+
 [MMM-CaravanPiTemperature - Module for displaying temperature values e.g. in the refrigerator](https://github.com/spitzlbergerj/MMM-CaravanPiTemperature) 
+
 [MMM-CaravanPiClimate - Module for displaying climate values](https://github.com/spitzlbergerj/MMM-CaravanPiClimate) 
 
 ## Screendumps
@@ -87,8 +90,7 @@ The following properties can be configured:
 			<td><b>Optional</b></code> - The update interval in milliseconds.<br/>
 				If not set, the default is: <code>300000</code> (5 minutes)</td>
 		</tr>
-
-        <tr>
+	        <tr>
 			<td><code>showDate</code></td>
 			<td><b>Optional</b></code> - Decides whether the date/time at which the values were determined is displayed. Possible values: <code>true</code> or <code>false</code> Default is <code>true</code></td>
 		</tr>
@@ -123,7 +125,7 @@ The following properties can be configured:
 							<td><code>nr</code></td>
 							<td>number of the tank</td>
 						</tr>
-						</tbody>
+					</tbody>
 				</table>
 			</td>
 		</tr>
